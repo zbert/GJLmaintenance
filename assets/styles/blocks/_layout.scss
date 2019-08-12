@@ -1,0 +1,37 @@
+.layout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__top {
+    position: relative;
+    flex: 0 0 auto;
+  }
+  &__body {
+    flex: 1 0 auto;
+  }
+  &__centerpiece {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &--overflow {
+      overflow: hidden;
+    }
+
+    &--full {
+      justify-content: stretch;
+      align-items: stretch;
+    }
+  }
+
+  @include screen-above('tablet') {
+    &__body {
+      flex: 1 0 auto;
+      position: relative;
+      display: flex;
+    }
+  }
+}

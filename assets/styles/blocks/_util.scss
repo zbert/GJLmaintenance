@@ -1,0 +1,38 @@
+.util {
+  &__sr-only {
+    //visually hide content but accssible to screen readers
+    //http://a11yproject.com/posts/how-to-hide-content/
+    
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
+  &__sr-skip-to {
+    height: 1px;
+    width: 1px;
+    clip: rect(0,0,0,0);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    margin: -1px;
+    transition: color .4s ease,
+    background-color .4s ease;
+    z-index: 10;
+
+    &:focus {
+      height: auto;
+      width: auto;
+      clip: auto;
+      margin: 0;
+      display: inline-block;
+      overflow: visible;
+      z-index: 1000;
+    }
+  }
+}

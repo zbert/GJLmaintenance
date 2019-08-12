@@ -1,0 +1,42 @@
+/// Center Align
+/// Absolute center elements using newer features of css3
+/// @access public
+/// @param {String} $direction - direction to center, defaults to both horizontal and vertical centering
+/// @example scss - Usage
+///   .foo {
+///     @include center-align();
+///   }
+///   .bar {
+///     @include center-align('horizontal');
+///   }
+/// @example css - Result
+///   .foo {
+///     position: absolute;
+///     top: 50%;
+///     left: 50%;
+///     transform: translate(-50%, -50%);
+///   }
+///   .bar {
+///     position: absolute;
+///     left: 50%;
+///     transform: translateX(-50%);
+///   }
+@mixin center-align($direction: null) {
+  position: absolute;
+
+  @if $direction == 'vertical' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @else if $direction == 'horizontal' {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @else  {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

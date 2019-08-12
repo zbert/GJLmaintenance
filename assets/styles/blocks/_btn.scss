@@ -1,0 +1,38 @@
+.btn {
+  padding: 0;
+  border: 0 none;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+
+  &-ghost {
+    
+
+    &:before {
+      
+    }
+
+    &--with-icon {
+      
+    }
+  }
+
+
+  @include screen-above('tablet') {
+    &-ghost {
+      // font-size: $fonts__button--tablet;
+      // padding: $spacing__unit * 1.75 $spacing__unit * 4;
+
+      // &:hover {
+      //   color: $colors__gray-dark;
+
+      //   &:before {
+      //     width: 100%;
+      //   }
+      //   .svg {
+      //     fill: $colors__gray-dark;
+      //   } 
+      // }
+    }
+  }
+}

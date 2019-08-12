@@ -1,0 +1,37 @@
+/// Modern font loading, supports ie10+
+/// @access public
+/// @param {String} $font-name  - Font name
+/// @param {String} $file-path-location - full location of file
+/// @param {Weight} $font-weight [normal] - Font weight, usually normal
+/// @param {Style} $font-style [normal] - Font Style, usually normal
+/// @example scss - Usage
+///   
+///   @include font-face('Museo', './assets/public/fonts/fontname');
+///   
+/// @example css - Result
+///   
+///   font-family: 'Museo';
+///   src: url('./assets/public/fonts/fontname.woff2') format('woff2'), // Super Modern Browsers 
+///     url('./assets/public/fonts/fontname.woff') format('woff'), // Pretty Modern Browsers 
+///     url('./assets/public/fonts/fontname.ttf') format('truetype'), // Safari, Android, iOS
+///     url('./assets/public/fonts/fontname.svg#Museo') format('svg'); // Legacy iOS 
+///   font-weight: $font-weight;
+///   font-style: $font-style;
+
+@mixin container (
+  $padding-tablet: $globals__container-padding--tablet,
+  $padding-mobile: $globals__container-padding,
+  $max-size: ($globals__max-width + ($padding-tablet * 2))
+  ) {
+  max-width: $max-size;
+  width: 100%;
+  padding-left: $padding-mobile;
+  padding-right: $padding-mobile;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include screen-above('tablet') {
+    padding-left: $padding-tablet;
+    padding-right: $padding-tablet;
+  }
+}

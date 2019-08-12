@@ -1,0 +1,28 @@
+/// Clearfix extend
+/// @access public
+/// @param {Position} $position - background position
+/// @param {Size} $size - background size
+/// @example scss - Usage
+///   .sometile {
+///     @include background-cover();
+///   }
+///   .someOthertile {
+///     @include background-cover(100%, contain);
+///     
+///   }
+/// @example css - Result
+///   .sometile {
+///     background-repeat: no-repeat;
+///     background-size: cover;
+///     background-position: center;
+///   }
+///   .someOthertile {
+///     background-repeat: no-repeat;
+///     background-size: contain;
+///     background-position: 100%;
+///   }
+@mixin background-cover($position: center, $size: cover) {
+  background-repeat: no-repeat;
+  background-size: $size;
+  background-position: $position;
+}

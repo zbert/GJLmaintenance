@@ -1,0 +1,20 @@
+.type {
+  &__h1 {
+    @include fonts-h1;
+  }
+  &__h2 {
+    @include fonts-h2;
+  }
+  &__h3 {
+    @include fonts-h3;
+  }
+  &__h4 {
+    @include fonts-h4;
+  }
+  &__h5 {
+    @include fonts-h5;
+  }
+  &__h6 {
+    @include fonts-h6;
+  }
+}

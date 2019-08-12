@@ -1,0 +1,27 @@
+/// Clearfix extend
+/// @access public
+/// @param {Direction} $direction - Direction of Gradient
+/// @param {Color} $start-color - Start Color
+/// @param {Color} $end-color - End Color
+/// @param {String} $type - Type of gradient (radial or Linear)
+/// @example scss - Usage
+///   .foo {
+///     @include gradient($start-color: black, $end-color: rgba(0,0,0, 0.1));
+///   }
+///   .bar {
+///     @include gradient($direction: 90deg, $start-color: black 40%, $end-color: rgba(0,0,0, 0.1));
+///   }
+/// @example css - Result
+///   .foo {
+///     background-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.1));
+///   }
+///   .bar {
+///     background-image: linear-gradient(90deg, black 40%, rgba(0, 0, 0, 0.1));
+///   }
+@mixin gradient($direction: to bottom, $start-color: null,  $end-color: null, $type: 'linear') {
+  @if $type == 'radial' {
+    background-image: radial-gradient(circle, $start-color, $end-color);
+  }  @else {
+    background-image: linear-gradient($direction, $start-color, $end-color);
+  }
+}

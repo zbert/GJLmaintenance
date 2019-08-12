@@ -1,0 +1,138 @@
+//------------------------------------------
+//				Variables
+//------------------------------------------
+$fonts__size-base: 16px;
+$fonts__line-height: 1.45;
+
+$fonts__h1: 32px !default;
+$fonts__h2: 30px !default;
+$fonts__h3: 24px !default;
+$fonts__h4: 20px !default;
+$fonts__h5: 18px !default;
+$fonts__h6: 12px !default;
+
+$fonts__h1--tablet: 42px !default;
+$fonts__h2--tablet: 40px !default;
+$fonts__h3--tablet: 26px !default;
+$fonts__h4--tablet: 22px !default;
+$fonts__h5--tablet: 21px !default;
+$fonts__h6--tablet: 14px !default;
+
+$font__entity-title: 20px;
+$font__entity-title--tablet: 30px;
+
+$fonts__small: 14px !default;
+$fonts__smallest: 12px !default;
+
+$fonts__copy: 16px;
+$fonts__copy--tablet: 18px;
+
+$fonts__button: 14px !default;
+$fonts__button--tablet: 16px !default;
+
+$fonts__work-sans:'Work Sans';
+$fonts__sans-serif: $fonts__work-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+$font-weights: (
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700,
+  'black': 900
+);
+
+@mixin font-weight($weight: null) {
+	@if map-has-key($font-weights, $weight) {
+		font-weight: map-get($font-weights, $weight);
+	}
+}
+
+//------------------------------------------
+//				Helpful Functions font conversion to EM or REMS
+//------------------------------------------
+@function px-to-em($pixels, $base: null) {
+  @if $base == null {
+    $base: $fonts__size-base;
+  }
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+	@return ($pixels / $base) * 1em;
+}
+
+@function em($args...) {
+  @return px-to-em($args...)
+}
+
+
+@function rem($pixels, $base: null) {
+  @if $base == null {
+    $base: $fonts__size-base;
+  }
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+	@return ($pixels / $base) * 1rem;
+}
+
+@mixin fonts-h1() {
+  font-size: $fonts__h1;
+  line-height: 1.2;
+
+  @include screen-above('tablet') {
+    font-size: $fonts__h1--tablet;
+  }
+}
+
+@mixin fonts-h2() {
+  @include font-weight('semibold');
+  font-size: $fonts__h2;
+  line-height: 1.1;
+
+  @include screen-above('tablet') {
+    font-size: $fonts__h2--tablet;
+  }
+}
+
+@mixin fonts-h3() {
+  @include font-weight('bold');
+  font-size: $fonts__h3;
+  line-height: 1.1;
+
+  @include screen-above('tablet') {
+    font-size: $fonts__h3--tablet;
+  }
+}
+
+@mixin fonts-h4() {
+  @include font-weight('bold');
+  font-size: $fonts__h4;
+  line-height: 1.1;
+
+  @include screen-above('tablet') {
+    font-size: $fonts__h4--tablet;
+  }
+}
+
+@mixin fonts-h5() {
+  @include font-weight('semibold');
+  font-size: $fonts__h5;
+  line-height: 1.1;
+
+  @include screen-above('tablet') {
+    font-size: $fonts__h5--tablet;
+  }
+}
+
+@mixin fonts-h6() {
+  @include font-weight('bold');
+  font-size: $fonts__h6;
+  line-height: 1.1;
+
+  @include screen-above('tablet') {
+    font-size: $fonts__h6--tablet;
+  }
+}

@@ -1,0 +1,45 @@
+/// Screen Above
+/// Mixin to manage responsive breakpoints
+/// Variation of https://gist.github.com/Metaviolet/682c8d3b05a3a01fd598
+/// @access public
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+/// @example scss - Usage
+///   .foo {
+///     @include screen-above ('mobile-wide') {
+///       background-color: palevioletred;
+///     }
+///   }  
+///   .bar {
+///     @include screen-above (800px) {
+///       background-color: #000;
+///     }
+///   }  
+/// @example css - Result
+///   .foo {
+///     @media screen and (min-width: 31.25em) {
+///       background-color: palevioletred;
+///     }
+///   } 
+///   .bar {
+///     @media screen and (min-width: 50em) {
+///       background-color: #000;
+///     }
+///   }
+@mixin screen-above($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    
+    // Prints a media query based on the value
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @media screen and (min-width: px-to-em($device-width, $fonts__size-base)) {
+      @content;
+    }
+  }
+}

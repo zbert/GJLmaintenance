@@ -1,0 +1,16 @@
+
+
+$screen__mobile: 500px;
+$screen__tablet: 767px;
+$screen__desktop: 992px;
+
+/// Breakpoint Maps
+/// To be  used witth screen-above Mixin
+$breakpoints: (
+  'mobile-wide': px-to-em($screen__mobile), // 480px
+  'tablet':  px-to-em($screen__tablet), //768px
+  'desktop': px-to-em($screen__desktop), //992px
+) !default;
+
+
+

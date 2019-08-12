@@ -1,0 +1,19 @@
+/// Clearfix extend
+/// @access public
+/// @param {Integer} $width - Width
+/// @param {Integer} $height - Height
+/// @example scss - Usage
+///   .foo {
+///     @include aspect-ratio();
+///   }
+/// @example css - Result
+///   .foo {
+///     width: 100%;
+///     padding-top: 56.25%;
+///   }
+@mixin aspect-ratio($width, $height) {
+  $ratio: $height/$width;
+
+  width: 100%;
+  padding-top: $ratio * 100%;
+}

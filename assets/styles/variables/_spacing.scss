@@ -1,0 +1,12 @@
+// Standard  Per Josephs Pearson's base scale
+$spacing__unit: 8px;
+
+//variation
+$spacing__sm: $spacing__unit * 2;
+$spacing__bt: $spacing__unit * 3;
+$spacing__md: $spacing__unit * 5;
+$spacing__lg: $spacing__unit * 8;
+$spacing__xl: $spacing__unit * 12;
+
+$spacing__section: $spacing__md;
+$spacing__section--tablet: $spacing__lg;

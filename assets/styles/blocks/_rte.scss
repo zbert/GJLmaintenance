@@ -1,0 +1,136 @@
+.rte {
+  $element-spacing: $spacing__unit * 3;
+  $heading-spacing: $spacing__unit * 4;
+  
+  font-size: $fonts__copy;
+  line-height: 1.4;
+
+  p {
+    img {
+      margin: 0;
+    }
+  }
+
+  .pull-left {
+    float: left;
+
+  }
+
+  // remove any spacing with last or first direct child
+  & > * {
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 1.1em;
+    margin-bottom: $element-spacing;
+    margin-top: $heading-spacing;
+
+    ul {
+      list-style-type: circle;
+      margin-top: $element-spacing/1.2;
+    }
+  }
+
+  li {
+    margin-bottom: $element-spacing / 4;
+  }
+
+  ol {
+    padding-left: 1.1em;
+    list-style-type: decimal;
+    margin-top: $heading-spacing;
+    margin-bottom: $element-spacing;
+
+    ol {
+      margin-top: $element-spacing/2;
+    }
+  }
+
+  //headings
+  
+  h1 {
+    text-decoration: line-through;
+  }
+
+  h2,
+  .h2-size {
+    font-size: $fonts__h2;
+    line-height: 1.15;
+    margin-bottom: $element-spacing / 4;
+    margin-top: $heading-spacing;
+  }
+
+  h3,
+  .h3-size {
+    font-size: $fonts__h3;
+    margin-bottom: $element-spacing / 4;
+    margin-top: $heading-spacing;
+  }
+
+  h4,
+  .h4-size {
+    font-size: $fonts__h4;
+    line-height: 1.1;
+    margin-bottom: $element-spacing / 4;
+    margin-top:$heading-spacing;
+  }
+
+  h5,
+  .h5-size {
+    font-size: $fonts__h5;
+    line-height: 1.15;
+    margin-bottom: $element-spacing / 4;
+    margin-top: $heading-spacing;
+  }
+  
+  h6,
+  .h6-size {
+    font-size: $fonts__h6;
+    margin-bottom: $element-spacing / 4;
+    margin-top: $heading-spacing;
+  }  
+
+  img,
+  iframe {
+    max-width: 100%;
+    margin: $heading-spacing 0;
+  }
+
+  blockquote {
+    padding-left: 20px;
+    border-left: 3px solid aquamarine;
+    margin: $heading-spacing 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: $heading-spacing 0;
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #E1E1E1;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  @include screen-above('tablet') {
+    font-size: $fonts__copy--tablet;
+  }
+}
