@@ -63,12 +63,10 @@ export default {
 
   @include screen-above('tablet') {
     &__title {
-      float: left;
       width: 60%;
     }
 
     &__grid {
-      float: right;
       max-width: 50%;
     }
 
@@ -77,7 +75,6 @@ export default {
     }
 
     &__grid {
-      float: right;
       max-width: 40%;
     }
   }
