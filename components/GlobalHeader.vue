@@ -11,7 +11,7 @@
       </h1>
       <nav class="global-header__navbar">
         <a v-for="link in links" 
-          :key="link.url"
+          :key="link.label"
           :href="link.url"
         class="global-header__navbar-link">{{link.label}}</a>
       </nav>
