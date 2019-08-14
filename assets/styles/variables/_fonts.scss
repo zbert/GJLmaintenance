@@ -4,22 +4,22 @@
 $fonts__size-base: 16px;
 $fonts__line-height: 1.45;
 
-$fonts__h1: 32px !default;
+$fonts__h1: 28px !default;
 $fonts__h2: 30px !default;
 $fonts__h3: 24px !default;
 $fonts__h4: 20px !default;
 $fonts__h5: 18px !default;
 $fonts__h6: 12px !default;
 
-$fonts__h1--tablet: 42px !default;
+$fonts__h1--tablet: 32px !default;
 $fonts__h2--tablet: 40px !default;
 $fonts__h3--tablet: 26px !default;
 $fonts__h4--tablet: 22px !default;
 $fonts__h5--tablet: 21px !default;
 $fonts__h6--tablet: 14px !default;
 
-$font__entity-title: 20px;
-$font__entity-title--tablet: 30px;
+$fonts__lead-copy: 18px;
+$fonts__lead-copy--tablet: 20px;
 
 $fonts__small: 14px !default;
 $fonts__smallest: 12px !default;
@@ -39,6 +39,7 @@ $font-weights: (
   'medium': 500,
   'semibold': 600,
   'bold': 700,
+  'extrabold': 800,
   'black': 900
 );
 
@@ -79,6 +80,7 @@ $font-weights: (
 }
 
 @mixin fonts-h1() {
+  @include font-weight('extrabold');
   font-size: $fonts__h1;
   line-height: 1.2;
 
@@ -134,5 +136,15 @@ $font-weights: (
 
   @include screen-above('tablet') {
     font-size: $fonts__h6--tablet;
+  }
+}
+
+@mixin fonts-lead-copy () {
+  @include font-weight('semibold');
+  font-size: $fonts__lead-copy;
+  line-height: 1.4;
+
+  @include screen-above('tablet') {
+    font-size: $fonts__lead-copy--tablet;
   }
 }

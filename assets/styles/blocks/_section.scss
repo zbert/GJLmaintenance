@@ -1,12 +1,12 @@
 .section {
-  padding: $spacing__section;
+  padding: $spacing__section 0;
 
-  &--light {
+  &--cream {
     background-color: $colors__beige;
     border: thin solid $colors__khaki;
   }
 
   @include screen-above('tablet') {
-    padding: $spacing__section--tablet;
+    padding: $spacing__section--tablet 0;
   }
 }
