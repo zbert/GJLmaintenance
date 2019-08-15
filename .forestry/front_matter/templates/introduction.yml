@@ -18,3 +18,8 @@ fields:
     schema:
       format: markdown
   label: Description
+- name: images
+  type: include
+  config: {}
+  template: image-collage
+  label: Images
