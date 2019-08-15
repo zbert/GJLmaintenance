@@ -4,11 +4,12 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
-- type: heading
-  label: Seciones
 - type: document
   path: static/content/work
-  label: Work
+  label: Our Work
+  match: "**/*"
+- type: heading
+  label: Seciones
 - type: document
   path: static/content/homepage
   label: Homepage
