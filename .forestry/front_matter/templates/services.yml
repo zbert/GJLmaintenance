@@ -16,5 +16,3 @@ fields:
     schema:
       format: markdown
   label: Listing
-pages:
-- static/content/services.json
