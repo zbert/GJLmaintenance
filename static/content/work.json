@@ -2,6 +2,10 @@
   "title": "Our Work Speaks For Itself",
   "heading": "Our Work Speaks for Itself",
   "gallery": [
-
+    {
+      "template": "image-grid-block",
+      "photo": "/uploads/grid-img-1.jpg",
+      "alt_text": "Kitchen Demolition"
+    }
   ]
 }
