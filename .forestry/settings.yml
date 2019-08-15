@@ -18,6 +18,12 @@ sections:
 - type: document
   path: static/content/work.json
   label: Our Work
+- type: heading
+  label: Settings
+- type: document
+  path: static/content/general-settings.json
+  label: General Settings
+  match: "**/*"
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
