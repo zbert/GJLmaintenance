@@ -12,9 +12,6 @@ sections:
 - type: document
   path: static/content/work.json
   label: Our Work
-- type: document
-  path: static/content/homepage
-  label: Homepage
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
