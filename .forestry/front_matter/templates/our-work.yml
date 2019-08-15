@@ -8,20 +8,12 @@ fields:
     required: false
   label: Heading
 - name: gallery
-  type: image_gallery
-  config: {}
-  label: Gallery
-- name: sample_images
-  type: list
+  type: blocks
+  template_types:
+  - image-grid-block
   config:
-    use_select: true
     min: 
-    max: 
-    source:
-      type: documents
-      section: hire-us-f5457b7f-0b61-4207-a566-09291233b176
-      file: static/content/hireus/_index.md
-      path: collage
-  label: sample images
+    max: '20'
+  label: Gallery
 pages:
 - static/content/work.json
