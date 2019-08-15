@@ -1,4 +1,14 @@
 ---
 label: Image Grid Block
 hide_body: true
-fields: []
+fields:
+- name: photo
+  type: file
+  config:
+    maxSize: 250
+  label: photo
+- name: alt_text
+  type: text
+  config:
+    required: false
+  label: Alt Text
