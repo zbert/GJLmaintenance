@@ -7,7 +7,6 @@ sections:
 - type: document
   path: static/content/work
   label: Our Work
-  match: "**/*"
 - type: heading
   label: Seciones
 - type: document
