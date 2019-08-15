@@ -4,14 +4,14 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: heading
+  label: Seciones
 - type: document
   path: static/content/services.json
   label: Services
 - type: document
-  path: static/content/work
+  path: static/content/work.json
   label: Our Work
-- type: heading
-  label: Seciones
 - type: document
   path: static/content/homepage
   label: Homepage
