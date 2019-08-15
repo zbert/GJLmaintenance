@@ -4,12 +4,11 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: heading
+  label: Seciones
 - type: document
   path: static/content/introduction/_index.md
   label: Introductiton
-  match: "**/*"
-- type: heading
-  label: Seciones
 - type: document
   path: static/content/hireus/_index.md
   label: Hire Us
