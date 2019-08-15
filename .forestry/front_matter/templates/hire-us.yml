@@ -7,5 +7,10 @@ fields:
   config:
     required: false
   label: Heading
+- name: images
+  type: include
+  config: {}
+  template: image-collage
+  label: Images
 pages:
 - static/content/hireus/_index.md
