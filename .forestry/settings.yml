@@ -5,6 +5,10 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
+  path: content/work
+  label: Work
+  match: "**/*"
+- type: document
   path: static/content/homepage
   label: Homepage
 upload_dir: uploads
