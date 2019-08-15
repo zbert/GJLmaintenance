@@ -7,14 +7,10 @@ fields:
   config:
     required: false
   label: Heading
-- name: listing
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Listing
+- name: images
+  type: include
+  config: {}
+  template: image-collage
+  label: Images
 pages:
 - static/content/services/_index.md
