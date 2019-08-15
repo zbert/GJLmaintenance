@@ -4,11 +4,11 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: heading
+  label: Seciones
 - type: document
   path: static/content/hireus.json
   label: Hire Us
-- type: heading
-  label: Seciones
 - type: document
   path: static/content/services.json
   label: Services
