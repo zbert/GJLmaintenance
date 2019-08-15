@@ -3,8 +3,8 @@ copy = ""
 description = ""
 heading = "Why Hire Us"
 [collage]
-large_image = ""
-small_image = ""
+large_image = "/uploads/section_three_big.jpg"
+small_image = "/uploads/section_three_small.jpg"
 
 +++
 We are your one stop shop for a wide range of maintenance and repair solutions. So you don’t have to worry about any portion of the process.
