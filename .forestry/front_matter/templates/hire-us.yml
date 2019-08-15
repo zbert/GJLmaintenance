@@ -26,4 +26,4 @@ fields:
       format: markdown
   label: Description
 pages:
-- static/content/hireus.json
+- static/content/hireus/_index.md
