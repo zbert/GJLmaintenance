@@ -3,9 +3,11 @@
   $heading-spacing: $spacing__unit * 4;
   
   font-size: $fonts__copy;
-  line-height: 1.4;
+  line-height: 1.6;
 
   p {
+    margin-bottom: $spacing__element;
+
     img {
       margin: 0;
     }

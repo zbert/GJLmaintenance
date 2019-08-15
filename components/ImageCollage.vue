@@ -23,7 +23,9 @@ export default {
     modifierClass () {
       return (this.layoutType === 'layoutB')
         ? 'image-collage--layoutB'
-        : 'image-collage--layoutA'
+        : (this.layoutType === 'layoutC')
+          ? 'image-collage--layoutC'
+          : 'image-collage--layoutA'
     }
   }
 }
@@ -70,9 +72,15 @@ export default {
     }
   }
 
-  @include screen-above('mobile-wide') {
-    margin-right: 0;
+  &--layoutC &{
+    &__small {
+      z-index: -1;
+      width: 60%;
+    }
+  }
 
+  @include screen-above('mobile-wide') {
+    
     &__big {
       margin-top: 0;
     }
@@ -82,6 +90,17 @@ export default {
         width: 90%;
       }
 
+      &__small {
+        width: 70%;
+      }
+    }
+    &--layoutC {
+      margin-right: $globals__container-padding * -1;
+    }
+    &--layoutC &{
+      &__big {
+        padding-bottom: $spacing__gutter * 2;
+      }
       &__small {
         width: 70%;
       }
@@ -103,6 +122,18 @@ export default {
 
       &__small {
         width: 84%;
+      }
+    }
+
+    &--layoutC {
+      margin-right: $globals__container-padding--tablet * -1;
+    }
+    &--layoutC &{
+      &__big {
+        width: auto;
+      }
+      &__small {
+       width: 90%;
       }
     }
   }

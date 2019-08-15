@@ -39,6 +39,7 @@ export default {
     position: relative;
     z-index: 5;
   }
+
   &__message {
     @include fonts-lead-copy;
 
