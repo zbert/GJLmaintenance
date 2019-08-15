@@ -14,3 +14,5 @@ fields:
   config: {}
   template: image-collage
   label: Images
+pages:
+- static/content/introduction/_index.md
