@@ -1,6 +1,6 @@
 ---
 label: Our Work
-hide_body: false
+hide_body: true
 fields:
 - name: heading
   type: text
