@@ -1,4 +1,19 @@
 ---
 label: Image Collage
 hide_body: true
-fields: []
+fields:
+- name: collage
+  type: field_group
+  config: {}
+  fields:
+  - name: large_image
+    type: file
+    config:
+      maxSize: 250
+    label: Large Image
+  - name: small_image
+    type: file
+    config:
+      maxSize: 250
+    label: Small Image
+  label: Collage
