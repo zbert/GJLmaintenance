@@ -7,7 +7,7 @@ sections:
 - type: heading
   label: Seciones
 - type: document
-  path: static/content/hireus.json
+  path: static/content/hireus/_index.md
   label: Hire Us
 - type: document
   path: static/content/services.json
