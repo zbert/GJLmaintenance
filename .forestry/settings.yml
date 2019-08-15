@@ -8,7 +8,7 @@ sections:
   label: Seciones
 - type: document
   path: static/content/introduction/_index.md
-  label: introduction
+  label: Introduction
 - type: document
   path: static/content/services/_index.md
   label: Services
