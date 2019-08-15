@@ -1,6 +1,6 @@
 ---
 label: Introduction
-hide_body: true
+hide_body: false
 fields:
 - name: heading
   type: list
@@ -9,15 +9,6 @@ fields:
     min: '4'
     max: '10'
   label: Heading
-- name: description
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Description
 - name: images
   type: include
   config: {}
