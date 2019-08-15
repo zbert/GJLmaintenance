@@ -7,7 +7,6 @@ sections:
 - type: document
   path: static/content/hireus.json
   label: Hire Us
-  match: "**/*"
 - type: heading
   label: Seciones
 - type: document
