@@ -1,6 +1,9 @@
 +++
 heading = "Our Services"
 listing = ""
+[collage]
+large_image = "/uploads/section_two_big.jpg"
+small_image = "/uploads/section_two_small.jpg"
 
 +++
 * Roof repair
