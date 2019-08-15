@@ -1,4 +1,20 @@
 ---
 label: Introduction
 hide_body: true
-fields: []
+fields:
+- name: heading
+  type: list
+  config:
+    use_select: false
+    min: '4'
+    max: '10'
+  label: Heading
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
