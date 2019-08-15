@@ -5,6 +5,10 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: document
+  path: static/content/services.json
+  label: Services
+  match: "**/*"
+- type: document
   path: static/content/work
   label: Our Work
 - type: heading
