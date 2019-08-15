@@ -10,11 +10,11 @@ sections:
   path: static/content/introduction/_index.md
   label: Introductiton
 - type: document
-  path: static/content/hireus/_index.md
-  label: Hire Us
-- type: document
   path: static/content/services/_index.md
   label: Services
+- type: document
+  path: static/content/hireus/_index.md
+  label: Hire Us
 - type: document
   path: static/content/work.json
   label: Our Work
