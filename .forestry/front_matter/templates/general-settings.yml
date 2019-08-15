@@ -1,4 +1,16 @@
 ---
 label: General Settings
 hide_body: true
-fields: []
+fields:
+- name: phone
+  type: text
+  config:
+    required: false
+  label: Phone
+  default: 773-584-1872
+- name: phone_prefix
+  type: text
+  config:
+    required: false
+  label: Phone Prefix
+  default: 'Call Us:'
