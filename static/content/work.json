@@ -6,6 +6,16 @@
       "template": "image-grid-block",
       "photo": "/uploads/grid-img-1.jpg",
       "alt_text": "Kitchen Demolition"
+    },
+    {
+      "template": "image-grid-block",
+      "photo": "/uploads/grid-img-2.jpg",
+      "alt_text": "Kitchen Cabinet Installation"
+    },
+    {
+      "template": "image-grid-block",
+      "photo": "",
+      "alt_text": ""
     }
   ]
 }
