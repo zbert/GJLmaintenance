@@ -1,8 +1,8 @@
 <template>
   <header class="global-header">
     <div class="global-header__bar type__h6 container">
-      <span class="global-header__bar-promo" v-html="promoLeft"></span>
-      <span class="global-header__bar-promo global-header__bar-promo--mobile-hidden">{{promoRight}}</span>
+      <div class="global-header__bar-promo" v-html="promoLeft"></div>
+      <div class="global-header__bar-promo global-header__bar-promo--mobile-hidden">{{promoRight}}</div>
     </div>
     <div class="global-header__main container">
       <h1 class="global-header__brand">
