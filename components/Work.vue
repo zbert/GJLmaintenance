@@ -2,7 +2,6 @@
   <div class="work section section--cream">
     <div class="container">
       <h2 class="work__title type__h2" v-html="title"></h2>
-      
       <image-grid :images="images"></image-grid>
     </div>    
   </div>

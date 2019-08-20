@@ -1,13 +1,15 @@
 <template>
   <header class="global-header">
-    <div class="global-header__bar type__h6 container">
-      <div class="global-header__bar-promo" v-html="promoLeft"></div>
-      <div class="global-header__bar-promo global-header__bar-promo--mobile-hidden">{{promoRight}}</div>
+    <div class="global-header__bar type__h6">
+      <div class="global-header__bar-flex  container">
+        <div class="global-header__bar-promo" v-html="promoLeft"></div>
+        <div class="global-header__bar-promo global-header__bar-promo--contact">{{promoRight}}</div>
+      </div>
     </div>
     <div class="global-header__main container">
       <h1 class="global-header__brand">
         <span class="util__sr-only">{{siteTitle}}</span>
-        <img alt="GJL Construction & Maintenance" src="~/assets/images/logo.svg">
+        <img class="global-header__brand-image" alt="GJL Construction & Maintenance" src="~/assets/images/logo.svg">
       </h1>
       <nav class="global-header__navbar">
         <a v-for="link in links" 
@@ -58,9 +60,19 @@ export default {
     padding-bottom: $spacing__sm;
   }
 
+  &__bar-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+  }
+
   &__bar-promo {
-    &--mobile-hidden {
-      display: none;
+    &:first-child {
+      width: 40%;
+    }
+    &--contact {
+      flex-shrink: 0;
+      padding-left: $spacing__sm;
     }
   }
 
@@ -68,16 +80,62 @@ export default {
     width: 180px;
   }
 
+  &__brand-image {
+    display: block;
+  }
+
   &__main {
     display: flex;
     justify-content: space-between;
-    padding-top: $spacing__sm;
-    padding-bottom: $spacing__sm;
+    align-items: center;
+    padding-top: $spacing__bt;
+    padding-bottom: $spacing__bt;
   }
 
   &__navbar-link {
     @include font-weight('bold');
     font-size: $fonts__smallest;
+  }
+
+  @include screen-above('mobile-wide') {
+    $font-nav-size: 17px;
+
+    &__bar-promo {
+      &:first-child {
+        width: auto;
+      }
+    }
+
+    &__navbar-link {
+      font-size: $font-nav-size;
+      &:not(:first-child) {
+        margin-left: 1em;
+      }
+    }
+
+    &__brand {
+      width: 200px;
+    }
+  }
+
+  @include screen-above('tablet') {
+    $font-nav-size: 19px;
+
+    &__main {
+      padding-top: $spacing__gutter;
+      padding-bottom: $spacing__gutter;
+    }
+
+    &__navbar-link {
+      font-size: $font-nav-size;
+      &:not(:first-child) {
+        margin-left: 2em;
+      }
+    }
+
+    &__brand {
+      width: 220px;
+    }
   }
 }
 </style>

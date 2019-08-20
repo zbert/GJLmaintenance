@@ -1,6 +1,6 @@
 <template>
   <div class="welcome section">
-    <div class="container">
+    <div class="container container--clearfix">
       <h2 class="welcome__title type__h1" v-html="title"></h2>
       <image-collage class="welcome__grid" v-bind="imageGrid"></image-collage>
       <div class="welcome__message" v-html="message"></div>
