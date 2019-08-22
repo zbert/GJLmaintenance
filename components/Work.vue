@@ -1,8 +1,8 @@
 <template>
   <div class="work section section--cream">
     <div class="container">
-      <h2 class="work__title type__h2" v-html="title"></h2>
-      <image-grid :images="images"></image-grid>
+      <h2 class="work__title type__h2">{{heading}}</h2>
+      <image-grid :images="gallery"></image-grid>
     </div>    
   </div>
 </template>
@@ -14,24 +14,10 @@ export default {
   components: {
     ImageGrid
   },
-  data: () => ({
-    title: 'Our Work Speaks For Itself',
-    message: '<ul><li>Roof repair.</li><li>Windows repair.</li><li>Hardwood floors repair.</li><li>Patch and paint drywall.</li><li>Stoves and refrigerator repair.</li><li>Toilets replace and repair.</li><li>Showers faucet and drains repair.</li><li>Kitchen issues repair</li><li>Electrical issues repair.</li><li>Section 8 inspections.</li><li>Furnace repair and replace</li><li>Water tank repair and replace.</li><li>Rod out drains.</li><li>Doors and locks replace and repair.</li><li>Garage doors replace and repair.</li></ul>',
-    images:[
-      {
-        url: '/images/grid-img-1.jpg',
-        alt: 'Kitchen Demolition'
-      },
-      {
-        url: '/images/grid-img-2.jpg',
-        alt: 'Kitchen Cabinet Installation'
-      },
-      {
-        url: '/images/grid-img-3.jpg',
-        alt: 'Kitchen Remodeled'
-      }
-    ]
-  })
+  props: {
+    heading: String,
+    gallery: Array
+  }
 }
 </script>
 

@@ -1,8 +1,8 @@
 <template>
   <div class="image-grid">
     <div v-for="imgItem in images" :key="imgItem.url" class="image-grid__cell">
-      <img :alt="imgItem.alt" class="image-grid__image" :src="imgItem.url">
-      <span v-if="imgItem.alt" class="image-grid__label">{{imgItem.alt}}</span>
+      <img :alt="imgItem.alt_text" class="image-grid__image" :src="imgItem.photo">
+      <span v-if="imgItem.alt_text" class="image-grid__label">{{imgItem.alt_text}}</span>
     </div>
   </div>
 </template>
@@ -53,9 +53,7 @@ export default {
       &:nth-child(3) {
         margin-top: 0;
       }
-  
     }
-
   }
 }
 </style>

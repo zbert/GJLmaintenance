@@ -3,7 +3,7 @@
     <welcome v-bind="welcomeContent" />
     <services v-bind="servicesContent" />
     <why-hire v-bind="hireUsContent" />
-    <work/>
+    <work v-bind="workContent" />
   </div>
 </template>
 
@@ -16,6 +16,7 @@ import Work from '~/components/Work.vue'
 import WhyHireMarkdown from "~/static/content/hireus/_index.md"
 import ServicesMarkdown from "~/static/content/services/_index.md"
 import WelcomeMarkdown from "~/static/content/introduction/_index.md"
+import WorkJson from "~/static/content/work.json"
 
 
 
@@ -42,7 +43,10 @@ export default {
       copy: WelcomeMarkdown.html,
       imageGrid: WelcomeMarkdown.attributes.collage
     })
-  }
+  },
+  data: () =>({
+    workContent: WorkJson
+  })
 }
 </script>
 

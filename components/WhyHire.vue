@@ -1,7 +1,7 @@
 <template>
   <div class="why-hire section">
     <div class="container container--clearfix">
-      <h2 class="why-hire__title type__h2" v-html="title"></h2>
+      <h2 class="why-hire__title type__h2">{{title}}</h2>
       <image-collage class="why-hire__grid" v-bind="imageGrid" layout-type="layoutC"></image-collage>
       <div class="why-hire__copy">
         <div class="rte" v-html="copy"></div>

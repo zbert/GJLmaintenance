@@ -1,7 +1,7 @@
 <template>
   <div class="services section section--cream">
     <div class="container container--clearfix">
-      <h2 class="services__title type__h2" v-html="title"></h2>
+      <h2 class="services__title type__h2">{{title}}</h2>
       <div class="services__listing" v-html="copy"></div>
       <image-collage class="services__grid" v-bind="imageGrid" layout-type="layoutB"></image-collage>
     </div>    
