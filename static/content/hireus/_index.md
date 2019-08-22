@@ -4,7 +4,7 @@ copy: ''
 description: ''
 collage:
   large_image: "/uploads/section_two_big.jpg"
-  small_image: "/uploads/section_two_small.jpg"
+  small_image: ''
 large_image: "/uploads/section_three_big.jpg"
 small_image: "/uploads/section_three_small.jpg"
 
