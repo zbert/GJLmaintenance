@@ -2,7 +2,7 @@
   <div class="layout__body">
     <welcome />
     <services />
-    <why-hire/>
+    <why-hire v-bind="hireUsContent" />
     <work/>
   </div>
 </template>
@@ -13,8 +13,8 @@ import Services from '~/components/Services.vue'
 import WhyHire from '~/components/WhyHire.vue'
 import Work from '~/components/Work.vue'
 
-import markdownFile from "~/static/content/hireus/_index.md"
-import fm from 'front-matter'
+import HireUs from "~/static/content/hireus/_index.md"
+
 
 export default {
   components: {
@@ -23,8 +23,12 @@ export default {
     WhyHire,
     Work
   },
-  mounted() {
-    console.log(fm(markdownFile))
+  computed: {
+    hireUsContent: () => ({
+      title: HireUs.attributes.heading,
+      copy: HireUs.html,
+      imageGrid: HireUs.attributes.collage
+    })
   }
 }
 </script>

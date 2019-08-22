@@ -1,7 +1,5 @@
 ---
 heading: Why Hire Us
-copy: ''
-description: ''
 collage:
   large_image: "/uploads/section_two_big.jpg"
   small_image: "/uploads/section_two_small.jpg"

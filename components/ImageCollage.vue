@@ -1,7 +1,7 @@
 <template>
   <div class="image-collage" :class=[modifierClass]>
-    <img class="image-collage__big" :src="bigImageUrl" />
-    <img class="image-collage__small" :src="smallImageUrl" />
+    <img v-if="large_image" class="image-collage__big" :src="large_image" />
+    <img v-if="small_image" class="image-collage__small" :src="small_image" />
   </div>
 </template>
 
@@ -12,8 +12,8 @@ export default {
       type: String,
       default: 'layoutA'
     },
-    bigImageUrl: String,
-    smallImageUrl: String,
+    large_image: String,
+    small_image: String,
     alignment: {
       type: String,
       default: 'left'

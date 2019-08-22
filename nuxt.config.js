@@ -1,4 +1,11 @@
+import MarkdownIt from 'markdown-it'
+
 const path = require('path')
+const md = MarkdownIt({
+  html: true,
+  linkify: true,
+  typographer: true
+})
 
 export default {
   mode: 'spa',
@@ -79,7 +86,12 @@ export default {
       
       config.module.rules.push({
         test: /\.md$/,
-        use: ['raw-loader']
+        loader: 'frontmatter-markdown-loader',
+        options: {
+          markdown: (body) => {
+            return md.render(body)
+          }
+        }
       })
     }
   }
