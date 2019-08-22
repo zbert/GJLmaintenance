@@ -15,4 +15,4 @@ With our working experience at Chicago Hotels and Realty companies, we’ll work
 
 We have helped customers complete full rehab of units, including patching and painting walls/ceilings, repairing plumbing and drains, installation of commercial vinyl tile and ceramic tiles, all while ensuring standards are up to CHA inspections.
 
-**Home owners in need of renovations?** We’ll be happy to accomodate your needs, we’ve remodel entire kitchens and bathrooms. All while making the renovation process as smooth and comprehensive as possible.
+**Home owners in need of renovations?** We’ll be happy to accommodate your needs, we’ve remodel entire kitchens and bathrooms. All while making the renovation process as smooth and comprehensive as possible.
