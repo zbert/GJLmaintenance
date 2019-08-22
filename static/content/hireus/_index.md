@@ -1,8 +1,10 @@
 ---
-copy: ""
-description: ""
-heading: "Why Hire Us"
+heading: Why Hire Us
+copy: ''
+description: ''
 collage:
+  large_image: "/uploads/section_two_big.jpg"
+  small_image: "/uploads/section_two_small.jpg"
 large_image: "/uploads/section_three_big.jpg"
 small_image: "/uploads/section_three_small.jpg"
 
