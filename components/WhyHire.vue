@@ -14,13 +14,13 @@
 import ImageCollage from '~/components/ImageCollage'
 
 export default {
+  components: {
+    ImageCollage
+  },
   props: {
     title: String,
     copy: String,
     imageGrid: Object
-  },
-  components: {
-    ImageCollage
   }
 }
 </script>

@@ -2,7 +2,7 @@
   <div class="services section section--cream">
     <div class="container container--clearfix">
       <h2 class="services__title type__h2" v-html="title"></h2>
-      <div class="services__listing" v-html="message"></div>
+      <div class="services__listing" v-html="copy"></div>
       <image-collage class="services__grid" v-bind="imageGrid" layout-type="layoutB"></image-collage>
     </div>    
   </div>
@@ -15,14 +15,11 @@ export default {
   components: {
     ImageCollage
   },
-  data: () => ({
-    title: 'Services',
-    message: '<ul><li>Roof repair.</li><li>Windows repair.</li><li>Hardwood floors repair.</li><li>Patch and paint drywall.</li><li>Stoves and refrigerator repair.</li><li>Toilets replace and repair.</li><li>Showers faucet and drains repair.</li><li>Kitchen issues repair</li><li>Electrical issues repair.</li><li>Section 8 inspections.</li><li>Furnace repair and replace</li><li>Water tank repair and replace.</li><li>Rod out drains.</li><li>Doors and locks replace and repair.</li><li>Garage doors replace and repair.</li></ul>',
-    imageGrid: {
-      bigImageUrl: '/images/section_two_big.jpg',
-      smallImageUrl: '/images/section_two_small.jpg'
-    }
-  })
+  props: {
+    title: String,
+    copy: String,
+    imageGrid: Object
+  }
 }
 </script>
 

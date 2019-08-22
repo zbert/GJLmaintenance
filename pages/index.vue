@@ -1,7 +1,7 @@
 <template>
   <div class="layout__body">
-    <welcome />
-    <services />
+    <welcome v-bind="welcomeContent" />
+    <services v-bind="servicesContent" />
     <why-hire v-bind="hireUsContent" />
     <work/>
   </div>
@@ -13,7 +13,10 @@ import Services from '~/components/Services.vue'
 import WhyHire from '~/components/WhyHire.vue'
 import Work from '~/components/Work.vue'
 
-import HireUs from "~/static/content/hireus/_index.md"
+import WhyHireMarkdown from "~/static/content/hireus/_index.md"
+import ServicesMarkdown from "~/static/content/services/_index.md"
+import WelcomeMarkdown from "~/static/content/introduction/_index.md"
+
 
 
 export default {
@@ -25,9 +28,19 @@ export default {
   },
   computed: {
     hireUsContent: () => ({
-      title: HireUs.attributes.heading,
-      copy: HireUs.html,
-      imageGrid: HireUs.attributes.collage
+      title: WhyHireMarkdown.attributes.heading,
+      copy: WhyHireMarkdown.html,
+      imageGrid: WhyHireMarkdown.attributes.collage
+    }),
+    servicesContent: () => ({
+      title: ServicesMarkdown.attributes.heading,
+      copy: ServicesMarkdown.html,
+      imageGrid: ServicesMarkdown.attributes.collage
+    }),
+    welcomeContent: () => ({
+      title: WelcomeMarkdown.attributes.heading,
+      copy: WelcomeMarkdown.html,
+      imageGrid: WelcomeMarkdown.attributes.collage
     })
   }
 }
