@@ -76,6 +76,11 @@ export default {
     */
     extend (config, ctx) {
       config.resolve.alias['normalize'] = path.resolve(__dirname, 'node_modules/normalize-scss/sass/_normalize.scss')
+      
+      config.module.rules.push({
+        test: /\.md$/,
+        use: ['raw-loader']
+      })
     }
   }
 }

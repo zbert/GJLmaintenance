@@ -11,8 +11,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/markdownit": "1.2.6",
     "@nuxtjs/style-resources": "1.0.0",
     "@nuxtjs/svg-sprite": "0.2.1",
+    "frontmatter-markdown-loader": "1.8.0",
+    "markdown-it": "9.1.0",
     "marked": "0.7.0",
     "node-sass": "4.12.0",
     "normalize-scss": "7.0.1",
