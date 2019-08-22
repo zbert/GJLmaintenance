@@ -2,7 +2,7 @@
 copy: ""
 description: ""
 heading: "Why Hire Us"
-[collage]
+collage:
 large_image: "/uploads/section_three_big.jpg"
 small_image: "/uploads/section_three_small.jpg"
 
