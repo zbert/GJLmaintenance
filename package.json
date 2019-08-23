@@ -22,7 +22,8 @@
     "nuxt": "^2.0.0",
     "postcss-pxtorem": "4.0.1",
     "sass-loader": "7.2.0",
-    "svg4everybody": "2.1.9"
+    "svg4everybody": "2.1.9",
+    "vue-scrollto": "2.15.0"
   },
   "devDependencies": {}
 }

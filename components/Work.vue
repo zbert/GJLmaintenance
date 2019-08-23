@@ -1,5 +1,5 @@
 <template>
-  <div class="work section section--cream">
+  <div id="our-work" class="work section section--cream">
     <div class="container">
       <h2 class="work__title type__h2">{{heading}}</h2>
       <image-grid :images="gallery"></image-grid>

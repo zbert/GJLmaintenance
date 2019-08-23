@@ -1,5 +1,5 @@
 <template>
-  <div class="services section section--cream">
+  <div id="services" class="services section section--cream">
     <div class="container container--clearfix">
       <h2 class="services__title type__h2">{{title}}</h2>
       <div class="services__listing" v-html="copy"></div>

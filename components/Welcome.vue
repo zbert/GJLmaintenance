@@ -1,9 +1,11 @@
 <template>
-  <div class="welcome section">
+  <div id="welcome" class="welcome section">
     <div class="container container--clearfix">
       <h2 class="welcome__title type__h1" v-html="formattedTitle"></h2>
       <image-collage class="welcome__grid" v-bind="imageGrid"></image-collage>
       <div :style="[animationDelay]" class="welcome__message" v-html="copy"></div>
+      <button class="btn welcome__cta"><span class="btn__label">Contact Us Today</span></button>
+
     </div>    
   </div>
 </template>
@@ -55,6 +57,10 @@ export default {
     margin-top: $spacing__element;
   }
 
+  &__cta {
+    margin-top: $spacing__bt;
+  }
+
   @include screen-above('mobile-wide') {
     &__title {
       float: left;
@@ -74,6 +80,10 @@ export default {
   @include screen-above('tablet') {
     &__title {
       width: 60%;
+    }
+
+    &__cta {
+      margin-top: $spacing__gutter;
     }
 
     &__grid {

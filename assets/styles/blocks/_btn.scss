@@ -1,38 +1,57 @@
 .btn {
-  padding: 0;
-  border: 0 none;
-  background-color: transparent;
+  @include fonts-button();
+
+  padding: $spacing__sm $spacing__bt;
   display: inline-block;
   cursor: pointer;
+  position: relative;
 
-  &-ghost {
-    
-
-    &:before {
-      
-    }
-
-    &--with-icon {
-      
-    }
+  &:before,
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 2px solid $colors__black;
+    background-color: $colors__white;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
+  &:before {
+    
+    background-color: $colors__brand;
+    top: $spacing__unit;
+    left: $spacing__unit;
+  }
+  
+  &:after {
+    @include transition(transform);
+    background-color: $colors__white;
+  }
+
+  &__label {
+    @include transition(transform);
+
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+  }
 
   @include screen-above('tablet') {
-    &-ghost {
-      // font-size: $fonts__button--tablet;
-      // padding: $spacing__unit * 1.75 $spacing__unit * 4;
+    
+    padding: $spacing__bt $spacing__gutter;
 
-      // &:hover {
-      //   color: $colors__gray-dark;
+    &:hover {
+      &:after {
+        transform: translate($spacing__unit, $spacing__unit);
+      }
+    }
 
-      //   &:before {
-      //     width: 100%;
-      //   }
-      //   .svg {
-      //     fill: $colors__gray-dark;
-      //   } 
-      // }
+    &:hover &{
+      &__label {
+        transform: translate($spacing__unit, $spacing__unit);
+      }
     }
   }
 }
