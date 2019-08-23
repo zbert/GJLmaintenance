@@ -114,11 +114,12 @@ export default {
   }
 
   &__brand {
-    width: 180px;
+    width: 200px;
   }
 
   &__brand-image {
     display: block;
+    width: 100%;
   }
 
   &__main {
@@ -196,7 +197,7 @@ export default {
     }
 
     &__brand {
-      width: 200px;
+      width: 225px;
     }
   }
 
@@ -216,7 +217,7 @@ export default {
     }
 
     &__brand {
-      width: 220px;
+      width: 270px;
     }
   }
 }

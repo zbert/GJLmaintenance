@@ -4,6 +4,7 @@
     <services v-bind="servicesContent" />
     <why-hire v-bind="hireUsContent" />
     <work v-bind="workContent" />
+    <contact></contact>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Welcome from '~/components/Welcome.vue'
 import Services from '~/components/Services.vue'
 import WhyHire from '~/components/WhyHire.vue'
 import Work from '~/components/Work.vue'
+import Contact from '~/components/Contact.vue'
 
 import WhyHireMarkdown from "~/static/content/hireus/_index.md"
 import ServicesMarkdown from "~/static/content/services/_index.md"
@@ -25,7 +27,8 @@ export default {
     Welcome,
     Services,
     WhyHire,
-    Work
+    Work,
+    Contact
   },
   computed: {
     hireUsContent: () => ({
