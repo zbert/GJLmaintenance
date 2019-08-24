@@ -4,14 +4,17 @@
       <h2 class="welcome__title type__h1" v-html="formattedTitle"></h2>
       <image-collage class="welcome__grid" v-bind="imageGrid"></image-collage>
       <div :style="[animationDelay]" class="welcome__message" v-html="copy"></div>
-      <button class="btn welcome__cta"><span class="btn__label">Contact Us Today</span></button>
-
+      <button @click.prevent="scrollToContact" class="btn welcome__cta"><span class="btn__label">Contact Us Today</span></button>
     </div>    
   </div>
 </template>
 
 <script>
 import ImageCollage from '~/components/ImageCollage'
+
+const scrollOptions = {
+  easing: 'ease-in-out'
+}
 
 export default {
   components: {
@@ -32,6 +35,11 @@ export default {
       return {
         animationDelay: `${this.title.length * 0.1}s`
       }
+    }
+  },
+  methods: {
+    scrollToContact () {
+      this.$scrollTo('#contact', 700, scrollOptions)
     }
   }
 }

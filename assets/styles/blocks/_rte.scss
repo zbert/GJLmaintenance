@@ -4,6 +4,7 @@
   
   font-size: $fonts__copy;
   line-height: 1.6;
+  font-style: normal;
 
   p {
     margin-bottom: $spacing__element;
@@ -30,7 +31,13 @@
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: underlin e;
+    color: $colors__brand;
+
+    &.nonlink {
+      color:  $colors__black;
+      text-decoration: none;
+    }
   }
 
   ul {
@@ -134,5 +141,11 @@
 
   @include screen-above('tablet') {
     font-size: $fonts__copy--tablet;
+
+    a {
+      &:hover {
+        color: $colors__black;
+      }
+    }
   }
 }

@@ -6,7 +6,19 @@
     border: thin solid $colors__khaki;
   }
 
+  &--brand {
+    background-color: $colors__brand;
+  }
+
+  &--no-edge-padding {
+    padding-bottom: 0;
+  }
+
   @include screen-above('tablet') {
     padding: $spacing__section--tablet 0;
+
+    &--no-edge-padding {
+      padding-bottom: 0;
+    }
   }
 }
