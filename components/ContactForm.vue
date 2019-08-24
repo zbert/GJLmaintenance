@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 const states = {
   ready: 'ready',
@@ -73,12 +74,29 @@ export default {
     }
   },
   methods: {
+    encode (data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
     verifyValidFormState () {
       if (!this.isValidEmail) this.formState = states.invalidEmail
       if (!this.isValidForm) this.formState = states.missingFields
     },
     handleSubmit () {
-      console.log('ascd');
+      const axiosConfig = {
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      };
+      axios.post(
+        '/',
+        this.encode({
+          'form-name': 'contact-message',
+          ...this.fields
+        }),
+        axiosConfig
+      )
     }
   }
 }
