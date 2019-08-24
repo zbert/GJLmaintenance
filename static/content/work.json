@@ -15,6 +15,11 @@
       "template": "image-grid-block",
       "photo": "/uploads/grid-img-3.jpg",
       "alt_text": "Kitchen Floor and Cabinets"
+    },
+    {
+      "template": "image-grid-block",
+      "photo": "/uploads/roof-repair.jpg",
+      "alt_text": "Floor repair"
     }
   ]
 }
