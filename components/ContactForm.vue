@@ -5,7 +5,7 @@
   method="post"
   data-netlify="true"
   data-netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="contact-message" />
+    <input type="hidden" name="bot-field" />
     <h3 class="contact-form__title type__h4">I’m interested in learning more about:</h3>
     <div class="contact-form__fields">
       <div class="contact-form__field">
