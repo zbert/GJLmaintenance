@@ -15,7 +15,7 @@ collage:
 * Kitchen issues repair
 * Electrical issues repair
 * Section 8 inspections
-* Furnace repair and replace
+* Furnaces and A/C repairs
 * Water tank repair and replace
 * Rod out drains
 * Doors and locks replace and repair
