@@ -22,7 +22,7 @@
       </div>
       <div class="contact-form__field">
         <label for="message" class="contact-form__field-label">Message</label>
-        <textarea v-model="fields.message" id="message" cols="50" class="contact-form__input contact-form__input--textarea"  placeholder="Message" />
+        <textarea v-model="fields.message" id="message" cols="50" class="contact-form__input contact-form__input--textarea"  placeholder="What type of project are you looking to do?" />
       </div>
       <div class="contact-form__field">
         <button type="submit" class="btn"><span class="btn__label">Submit</span></button>
@@ -97,6 +97,14 @@ export default {
         }),
         axiosConfig
       )
+      .then(res => {
+        this.formState = states.success
+        console.log(res)
+      })
+      .catch ((err) => {
+        console.log(err)
+        this.formState = states.failure
+      })
     }
   }
 }
