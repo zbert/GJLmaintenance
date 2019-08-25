@@ -1,0 +1,18 @@
+---
+label: Contact
+hide_body: false
+fields:
+- name: heading
+  type: text
+  config:
+    required: false
+  label: Heading
+- name: address_details
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Address Details
