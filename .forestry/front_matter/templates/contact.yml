@@ -16,3 +16,5 @@ fields:
     schema:
       format: markdown
   label: Address Details
+pages:
+- static/content/contact/index.md
