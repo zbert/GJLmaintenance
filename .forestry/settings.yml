@@ -18,6 +18,10 @@ sections:
 - type: document
   path: static/content/work.json
   label: Our Work
+- type: document
+  path: static/content/contact/index.md
+  label: Contact Us
+  match: "**/*"
 - type: heading
   label: Settings
 - type: document
