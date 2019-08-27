@@ -12,9 +12,9 @@ fields:
   default: ''
   config:
     required: false
-    wysiwyg: false
+    wysiwyg: true
     schema:
-      format: markdown
+      format: html-blocks
   label: Address Details
 pages:
 - static/content/contact/index.md
