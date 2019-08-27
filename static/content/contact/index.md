@@ -1,6 +1,8 @@
 ---
 phone: Why Hire Us
 heading: Contact Us
-address_details: ''
+address_details: <p><a href="mailto:GJLMaintenance@gmail.com"><strong>GJLMaintenance@gmail.com</strong></a><br><a
+  href="tel:773-584-1872">773-584-1872</a></p>
 
 ---
+**Don't hesitate to contact us today for a Free Estimate or fill out the form below to schedule an appointment. Just ask for Jose.**
