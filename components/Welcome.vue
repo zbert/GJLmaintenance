@@ -4,7 +4,12 @@
       <h2 class="welcome__title type__h1" v-html="formattedTitle"></h2>
       <image-collage class="welcome__grid" v-bind="imageGrid"></image-collage>
       <div :style="[animationDelay]" class="welcome__message" v-html="copy"></div>
-      <button @click.prevent="scrollToContact" class="btn welcome__cta"><span class="btn__label">Contact Us Today</span></button>
+      <button 
+        :style="[ctaAnimationDelay]" 
+        @click.prevent="scrollToContact" 
+        class="btn welcome__cta">
+          <span class="btn__label">Contact Us Today</span>
+        </button>
     </div>    
   </div>
 </template>
@@ -34,6 +39,11 @@ export default {
     animationDelay () {
       return {
         animationDelay: `${this.title.length * 0.1}s`
+      }
+    },
+    ctaAnimationDelay () {
+      return {
+        animationDelay: `${(this.title.length + 1) * 0.1}s`
       }
     }
   },
@@ -126,7 +136,8 @@ export default {
     }
   }
 
-  &__title {
+  &__title,
+  &__cta {
     opacity: 0;
     animation: animateLeft 1s ease-in-out forwards;
   }
