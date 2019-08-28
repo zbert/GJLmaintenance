@@ -8,9 +8,12 @@ fields:
     required: false
   label: Phone
   default: 773-584-1872
-- name: phone_prefix
-  type: text
+- name: promotion
+  type: textarea
+  default: ''
   config:
     required: false
-  label: Phone Prefix
-  default: 'Call Us:'
+    wysiwyg: true
+    schema:
+      format: html-blocks
+  label: Promotion
