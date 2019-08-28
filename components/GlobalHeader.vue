@@ -2,7 +2,7 @@
   <header class="global-header">
     <div class="global-header__bar type__h6">
       <div class="global-header__bar-flex  container">
-        <div class="global-header__bar-promo">{{promotion}}</div>
+        <div class="global-header__bar-promo" v-html="promotion"></div>
         <div class="global-header__bar-promo global-header__bar-promo--contact">
           <span class="global-header__promo-label">{{promoLabelLeft}}</span> <a :href="'tel:' + phone">{{phone}}</a>
         </div>
