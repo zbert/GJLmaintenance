@@ -13,7 +13,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || 'GJL Construction & Maintenance',
+    title: 'GJL Construction & Maintenance',
     htmlAttrs: {
       lang: 'en'
     },
