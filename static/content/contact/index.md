@@ -1,5 +1,4 @@
 ---
-phone: Why Hire Us
 heading: Contact Us
 address_details: <p><a href="mailto:GJLMaintenance@gmail.com"><strong>GJLMaintenance@gmail.com</strong></a><br><a
   href="tel:773-251-8544" title="">773-251-8544</a></p>

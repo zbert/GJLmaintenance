@@ -21,7 +21,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=Edge' },
-      { hid: 'description', name: 'description', content: 'Chicagoland premier Construction & Maintenance Company' }
+      { hid: 'description', name: 'description', content: 'With over 15 years of experience, we provide expert property maintenance for all types of needs. From ensuring all plumbing and electrical appliances are in good working conditions to rehabbing units to Section 8 compliancy.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

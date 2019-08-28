@@ -2,13 +2,10 @@
   <div id="contact" class="contact section section--no-edge-padding">
     <div class="container">
 
-      <h2 class="contact__title type__h2">Contact Us</h2>
+      <h2 class="contact__title type__h2">{{heading}}</h2>
       <div class="contact__copy">
-        <div class="contact__lead">Don't hesitate to contact us today for a Free Estimate or fill out the form below to schedule an appointment. Just ask for Jose.</div>
-        <address class="rte">
-          <p><a  href="mailto:GJLMaintenance@gmail.com"><strong>GJLMaintenance@gmail.com</strong></a><br>
-          <a class="nonlink" href="tel:773-584-1872">773-584-1872</a></p>
-        </address>
+        <div class="contact__lead" v-html="lead"></div>
+        <address class="rte" v-html="address"></address>
       </div>
     </div>
 
@@ -28,7 +25,8 @@ export default {
   },
   props: {
     heading: String,
-    
+    lead: String,
+    address: String
   }
 }
 </script>

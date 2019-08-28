@@ -1,7 +1,7 @@
 <template>
   <div class="image-grid">
-    <div v-for="imgItem in images" :key="imgItem.url" class="image-grid__cell">
-      <img :alt="imgItem.alt_text" class="image-grid__image" :src="imgItem.photo">
+    <div v-for="(imgItem, index) in images" :key="imgItem.url" class="image-grid__cell">
+      <img :alt="'Construction Project ' + index" class="image-grid__image" :src="imgItem.photo">
       <span v-if="imgItem.alt_text" class="image-grid__label">{{imgItem.alt_text}}</span>
     </div>
   </div>

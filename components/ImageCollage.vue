@@ -1,7 +1,7 @@
 <template>
   <div class="image-collage" :class=[modifierClass]>
-    <img v-if="large_image" class="image-collage__big" :src="large_image" />
-    <img v-if="small_image" class="image-collage__small" :src="small_image" />
+    <img alt="Construction Tile, Framing, BUilding" v-if="large_image" class="image-collage__big" :src="large_image" />
+    <img alt="Maintenance Repairs" v-if="small_image" class="image-collage__small" :src="small_image" />
   </div>
 </template>
 

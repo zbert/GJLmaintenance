@@ -15,12 +15,11 @@ import WhyHire from '~/components/WhyHire.vue'
 import Work from '~/components/Work.vue'
 import Contact from '~/components/Contact.vue'
 
-import WhyHireMarkdown from "~/static/content/hireus/_index.md"
-import ServicesMarkdown from "~/static/content/services/_index.md"
-import WelcomeMarkdown from "~/static/content/introduction/_index.md"
-import WorkJson from "~/static/content/work.json"
-
-
+import WhyHireMarkdown from '~/static/content/hireus/_index.md'
+import ServicesMarkdown from '~/static/content/services/_index.md'
+import WelcomeMarkdown from '~/static/content/introduction/_index.md'
+import ContactMarkdown from '~/static/content/contact/index.md'
+import WorkJson from '~/static/content/work.json'
 
 export default {
   components: {
@@ -45,6 +44,11 @@ export default {
       title: WelcomeMarkdown.attributes.heading,
       copy: WelcomeMarkdown.html,
       imageGrid: WelcomeMarkdown.attributes.collage
+    }),
+    contactContent: () => ({
+      title: ContactMarkdown.attributes.heading,
+      lead: ContactMarkdown.html,
+      address: ContactMarkdown.attributes.address_details
     })
   },
   data: () =>({

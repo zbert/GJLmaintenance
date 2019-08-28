@@ -2,7 +2,7 @@
   <header class="global-header">
     <div class="global-header__bar type__h6">
       <div class="global-header__bar-flex  container">
-        <div class="global-header__bar-promo" v-html="promoLeft"></div>
+        <div class="global-header__bar-promo">{{promotion}}</div>
         <div class="global-header__bar-promo global-header__bar-promo--contact">
           <span class="global-header__promo-label">{{promoLabelLeft}}</span> <a :href="'tel:' + phone">{{phone}}</a>
         </div>
@@ -38,10 +38,12 @@ const scrollOptions = {
 }
 
 export default {
+  props: {
+    promotion: String,
+    phone: String
+  },
   data: () => ({
     expandMenu: false,
-    promoLeft: 'Free Estimates <span class="bullet">·</span> All Work Guaranteed',
-    phone: '773-584-1872',
     promoLabelLeft: 'Call Us:',
     siteTitle: 'GJL Construction & Maintenance',
     links: [
@@ -296,6 +298,15 @@ export default {
 
   @include screen-above('mobile-wide') {
     display: none;
+  }
+}
+</style>
+
+<style lang="scss">
+.global-header {
+  .bullet {
+    font-size: 1.5em;
+    vertical-align: middle;
   }
 }
 </style>

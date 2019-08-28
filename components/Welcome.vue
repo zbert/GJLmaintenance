@@ -48,6 +48,7 @@ export default {
 <style lang="scss" scoped>
 .welcome {
   padding-top: 0;
+  overflow-x: hidden;
 
   &__title {
     background-color: $colors__white;
