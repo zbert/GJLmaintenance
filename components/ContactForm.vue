@@ -1,34 +1,42 @@
 <template>
-  <form @submit.prevent="handleSubmit"
-  name="contact-message" 
-  class="contact-form "
-  method="post"
-  data-netlify="true"
-  data-netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="contact-message" />
-    <h3 class="contact-form__title type__h4">I’m interested in learning more about:</h3>
-    <div class="contact-form__fields">
-      <div class="contact-form__field">
-        <label for="name" class="contact-form__field-label">Your Name</label>
-        <input v-model="fields.name" id="name" class="contact-form__input" type="text" placeholder="Your Name" />
-      </div>
-      <div class="contact-form__field">
-        <label for="email" class="contact-form__field-label">Your Email</label>
-        <input v-model="fields.email" id="email" class="contact-form__input" type="email" placeholder="Your Email" />
-      </div>
-      <div class="contact-form__field">
-        <label for="phone" class="contact-form__field-label">Your Phone</label>
-        <input v-model="fields.phone" id="phone" class="contact-form__input" type="tel" placeholder="Your Phone" />
-      </div>
-      <div class="contact-form__field">
-        <label for="message" class="contact-form__field-label">Message</label>
-        <textarea v-model="fields.message" id="message" cols="50" class="contact-form__input contact-form__input--textarea"  placeholder="What type of project are you looking to do?" />
-      </div>
-      <div class="contact-form__field">
-        <button type="submit" class="btn"><span class="btn__label">Submit</span></button>
+  <transition name="fade" mode="out-in" tag="div">
+    <div v-if="formState === 'success'" class="contact-form">
+      <div class="contact-form__confirmation rte">
+        <div class="type__h3">Thank you for your submissions. We'll be in contact shortly!</div>
       </div>
     </div>
-  </form>
+    <form v-else @submit.prevent="handleSubmit"
+    name="contact-message" 
+    class="contact-form "
+    method="post"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field">
+      <div v-if="formState === 'missing'" class="contact-form__missing type__h4">You have missing Fields, please fill out all Fields.</div>
+      <input type="hidden" name="form-name" value="contact-message" />
+      <h3 class="contact-form__title type__h4">I’m interested in learning more about:</h3>
+      <div class="contact-form__fields">
+        <div class="contact-form__field">
+          <label for="name" class="contact-form__field-label">Your Name</label>
+          <input v-model="fields.name" id="name" class="contact-form__input" type="text" placeholder="Your Name" />
+        </div>
+        <div class="contact-form__field">
+          <label for="email" class="contact-form__field-label">Your Email</label>
+          <input v-model="fields.email" id="email" class="contact-form__input" type="email" placeholder="Your Email" />
+        </div>
+        <div class="contact-form__field">
+          <label for="phone" class="contact-form__field-label">Your Phone</label>
+          <input v-model="fields.phone" id="phone" class="contact-form__input" type="tel" placeholder="Your Phone" />
+        </div>
+        <div class="contact-form__field">
+          <label for="message" class="contact-form__field-label">Message</label>
+          <textarea v-model="fields.message" id="message" cols="50" class="contact-form__input contact-form__input--textarea"  placeholder="What type of project are you looking to do?" />
+        </div>
+        <div class="contact-form__field">
+          <button type="submit" class="btn"><span class="btn__label">Submit</span></button>
+        </div>
+      </div>
+    </form>
+  </transition>
 </template>
 
 <script>
@@ -41,6 +49,10 @@ const states = {
   loading: 'loading',
   success: 'success',
   failure: 'failure'
+}
+
+const axiosConfig = {
+  header: { 'Content-Type': 'application/x-www-form-urlencoded' }
 }
 
 
@@ -59,10 +71,10 @@ export default {
       return this.formState === states.success
     },
     isValidForm () {
-      return this.requiredKeys.every(key => this.fields[key])
+      return this.requiredKeys.every(key => this.fields[key]) && (this.isValidEmail || this.phone !== '')
     },
     requiredKeys () {
-      return Object.keys(this.fields)
+      return ['name', 'message']
     },
     isValidEmail () {
       const email = this.fields.email
@@ -70,7 +82,7 @@ export default {
       return emailRegex.test(email.toLowerCase())
     },
     canSubmitForm () {
-      return this.isValidForm && this.isValidEmail
+      return this.isValidForm
     }
   },
   methods: {
@@ -86,25 +98,24 @@ export default {
       if (!this.isValidForm) this.formState = states.missingFields
     },
     handleSubmit () {
-      const axiosConfig = {
-        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
-      };
-      axios.post(
-        '/',
-        this.encode({
-          'form-name': 'contact-message',
-          ...this.fields
-        }),
-        axiosConfig
-      )
-      .then(res => {
-        this.formState = states.success
-        console.log(res)
-      })
-      .catch ((err) => {
-        console.log(err)
-        this.formState = states.failure
-      })
+      this.verifyValidFormState()
+      if (this.canSubmitForm) {
+        axios.post(
+          '/',
+          this.encode({
+            'form-name': 'contact-message',
+            ...this.fields
+          }),
+          axiosConfig
+        )
+        .then(res => {
+          this.formState = states.success
+          
+        })
+        .catch ((err) => {
+          this.formState = states.failure
+        })
+      }
     }
   }
 }
@@ -151,12 +162,16 @@ export default {
       color: $colors__gray-text;
       opacity: 1;
     }
-
-    &--textarea {
-      
-    }
   }
 
+  &__confirmation {
+    padding: $globals__container-padding;
+  }
+
+  &__missing {
+    padding-top: $globals__container-padding;
+    color: red;
+  }
 
   @include screen-above('tablet') {
     
@@ -172,6 +187,13 @@ export default {
     &__input {
       padding: $spacing__bt $spacing__gutter;
     }
+
+    &__confirmation {
+      padding: $spacing__section--tablet $globals__container-padding;
+    }
+     &__missing {
+      padding-top: $spacing__section--tablet;
+     }
   }
 }
 </style>
