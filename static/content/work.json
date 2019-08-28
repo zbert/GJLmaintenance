@@ -20,6 +20,11 @@
       "template": "image-grid-block",
       "photo": "/uploads/roof-repair.jpg",
       "alt_text": "Roof repair"
+    },
+    {
+      "template": "image-grid-block",
+      "photo": "/uploads/roof.jpg",
+      "alt_text": "Roof Fully Repaired"
     }
   ]
 }
