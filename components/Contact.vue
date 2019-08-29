@@ -59,10 +59,6 @@ export default {
     transform: translateY($spacing__section * -2);
   }
 
-  @include screen-above('mobile-wide') {
-   
-  }
-
   @include screen-above('tablet') {
     &__form {
       margin-top: $spacing__section--tablet * 2;

@@ -4,7 +4,7 @@
     <services v-bind="servicesContent" />
     <why-hire v-bind="hireUsContent" />
     <work v-bind="workContent" />
-    <contact></contact>
+    <contact v-bind="contactContent"></contact>
   </div>
 </template>
 
