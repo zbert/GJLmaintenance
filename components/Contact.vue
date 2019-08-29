@@ -2,7 +2,7 @@
   <div id="contact" class="contact section section--no-edge-padding">
     <div class="container">
 
-      <h2 class="contact__title type__h2">{{heading}}</h2>
+      <h2 class="contact__title type__h2">{{title}}</h2>
       <div class="contact__copy">
         <div class="contact__lead" v-html="lead"></div>
         <address class="rte" v-html="address"></address>
@@ -24,7 +24,7 @@ export default {
     ContactForm
   },
   props: {
-    heading: String,
+    title: String,
     lead: String,
     address: String
   }
