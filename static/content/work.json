@@ -25,6 +25,11 @@
       "template": "image-grid-block",
       "photo": "/uploads/roof.jpg",
       "alt_text": "Roof Fully Repaired"
+    },
+    {
+      "template": "image-grid-block",
+      "photo": "/uploads/20191223_145525.jpg",
+      "alt_text": "Water heater tanks "
     }
   ]
 }
