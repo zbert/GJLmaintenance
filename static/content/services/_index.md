@@ -1,5 +1,5 @@
 ---
-heading: Our Services
+heading: Service
 collage:
   large_image: "/uploads/section_two_big.jpg"
   small_image: "/uploads/section_two_small.jpg"
