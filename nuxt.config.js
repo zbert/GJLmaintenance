@@ -13,7 +13,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'GJL Construction & Maintenance',
+    title: 'GJL Maintenance',
     htmlAttrs: {
       lang: 'en'
     },
