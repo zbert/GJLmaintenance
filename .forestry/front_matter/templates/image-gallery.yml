@@ -5,6 +5,12 @@ fields:
 - name: folders
   type: field_group_list
   fields:
+  - name: folder_name
+    type: text
+    config:
+      required: false
+    label: Folder Name
+    description: Nombre de Fotos o Projecto
   - name: gallery
     type: image_gallery
     config: {}
