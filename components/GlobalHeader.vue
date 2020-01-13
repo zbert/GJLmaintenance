@@ -9,11 +9,7 @@
       </div>
     </div>
     <div class="global-header__main container">
-      <h1 class="global-header__brand">
-        <span class="util__sr-only">{{siteTitle}}</span>
-        <img class="global-header__brand-image" alt="GJL Construction & Maintenance" src="~/assets/images/logo.svg">
-      </h1>
-      <button @click.prevent="toggleMenu" :class="[menuStateClass]" class="burger">
+      <button @click.prevent="toggleMenu" :class="[menuStateClass]" class="global-header__burger burger">
         <span class="burger__case">
           <span class="burger__line burger__buns"></span>
           <span class="burger__line burger__fillings"></span>
@@ -21,6 +17,12 @@
         </span>
         <span class="burger__label">Menu</span>
       </button>
+      <div class="global-header__brand">
+        <h1 class="global-header__heading">
+          <span class="util__sr-only">{{siteTitle}}</span>
+          <img class="global-header__brand-image" alt="GJL Construction & Maintenance" src="~/assets/images/logo.svg">
+        </h1>
+      </div>
       <nav class="global-header__navbar" :class="[navbarStateClass]">
         <a v-for="link in links" 
           :key="link.label"
@@ -28,6 +30,11 @@
           @click.prevent="scrollToSection(link.url)"
         class="global-header__navbar-link">{{link.label}}</a>
       </nav>
+
+      <a class="global-header__facebook" aria-label="Visit us at Facebook" target="_blank" rel="noopener" href="https://www.facebook.com/gjlmaintenance">
+        <img class="global-header__facebook-image" alt="facebook" src="data:image/svg+xml;base64,PCEtLSBHZW5lcmF0ZWQgYnkgSWNvTW9vbi5pbyAtLT4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI4IiB2aWV3Qm94PSIwIDAgMjQgMjgiPgo8dGl0bGU+ZmFjZWJvb2stb2ZmaWNpYWw8L3RpdGxlPgo8cGF0aCBmaWxsPSIjNDI2N2IyIiBkPSJNMjIuNjcyIDJjMC43MzQgMCAxLjMyOCAwLjU5NCAxLjMyOCAxLjMyOHYyMS4zNDRjMCAwLjczNC0wLjU5NCAxLjMyOC0xLjMyOCAxLjMyOGgtNi4xMDl2LTkuMjk3aDMuMTA5bDAuNDY5LTMuNjI1aC0zLjU3OHYtMi4zMTJjMC0xLjA0NyAwLjI4MS0xLjc1IDEuNzk3LTEuNzVsMS45MDYtMC4wMTZ2LTMuMjM0Yy0wLjMyOC0wLjA0Ny0xLjQ2OS0wLjE0MS0yLjc4MS0wLjE0MS0yLjc2NiAwLTQuNjcyIDEuNjg3LTQuNjcyIDQuNzgxdjIuNjcyaC0zLjEyNXYzLjYyNWgzLjEyNXY5LjI5N2gtMTEuNDg0Yy0wLjczNCAwLTEuMzI4LTAuNTk0LTEuMzI4LTEuMzI4di0yMS4zNDRjMC0wLjczNCAwLjU5NC0xLjMyOCAxLjMyOC0xLjMyOGgyMS4zNDR6Ij48L3BhdGg+Cjwvc3ZnPgo=" />
+      </a>
+
     </div>
   </header>
 </template>
@@ -116,7 +123,8 @@ export default {
   }
 
   &__brand {
-    width: 200px;
+    min-width: 200px;
+    flex-grow: 1;
   }
 
   &__brand-image {
@@ -124,10 +132,14 @@ export default {
     width: 100%;
   }
 
+  &__heading {
+    max-width: 195px;
+  }
+
   &__main {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    // justify-content: space-between;
+    align-items: baseline;
     padding-top: $spacing__bt;
     padding-bottom: $spacing__bt;
   }
@@ -162,6 +174,15 @@ export default {
     margin: 10vh auto 0;
   }
 
+  &__burger {
+    margin-right: $spacing__unit;
+  }
+
+  &__facebook {
+    align-self: center;
+    color: $colors__facebook;
+  }
+
   @include screen-above('mobile-wide') {
     $font-nav-size: 17px;
 
@@ -192,14 +213,22 @@ export default {
       font-size: $font-nav-size;
       display: inline-block;
       margin: 0;
-
-      &:not(:first-child) {
-        margin-left: 1em;
-      }
+      margin-right: 1em;
     }
 
-    &__brand {
-      width: 225px;
+    &__heading {
+      width: 100%;
+      max-width: 225px;
+    }
+
+    &__facebook {
+      margin-left: 2em;
+      align-self: auto;
+      vertical-align: bottom;
+    }
+
+    &__facebook-image {
+      vertical-align: bottom;
     }
   }
 
@@ -212,14 +241,14 @@ export default {
     }
 
     &__navbar-link {
+
       font-size: $font-nav-size;
-      &:not(:first-child) {
-        margin-left: 2em;
-      }
+      margin-left: $spacing__unit;
+      margin-right: 2em;
     }
 
-    &__brand {
-      width: 270px;
+    &__heading {
+      max-width: 270px;
     }
   }
 }
@@ -234,6 +263,7 @@ export default {
   text-align: center;
   position: relative;
   z-index: 11;
+  padding-left: 0;
 
   &__case {
     display: inline-block;

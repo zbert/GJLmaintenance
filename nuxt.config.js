@@ -82,9 +82,9 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
       config.resolve.alias['normalize'] = path.resolve(__dirname, 'node_modules/normalize-scss/sass/_normalize.scss')
-      
+
       config.module.rules.push({
         test: /\.md$/,
         loader: 'frontmatter-markdown-loader',
