@@ -1,6 +1,5 @@
 <template>
-  <a href="#0" class="image-album">
-    
+  <a :href="fullUrl" class="image-album">
     <div class="image-album__photo" :style="[background]"></div>
     <div class="image-album__heading">
       <span class="image-album__title type__h5">{{title}}</span>
@@ -12,9 +11,13 @@
 export default {
   props: {
     image: String,
-    title: String
+    title: String,
+    url: String
   },
   computed: {
+    fullUrl () {
+      return `/album/${this.url}`
+    },
     background () {
       return this.$backgroundStyle(this.image)
     }
@@ -60,7 +63,7 @@ export default {
     @include background-cover;
 
     height: 0;
-    padding-bottom: 50%;
+    padding-bottom: 62.25%;
     border: 2px solid $colors__black;
     border-bottom: 0;
   }

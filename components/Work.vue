@@ -3,9 +3,10 @@
     <div class="container">
       <h2 class="work__title type__h2">{{heading}}</h2>
       <ul class="work__list">
-        <li v-for="album in folders" :key="album.folder_name" class="work__list-album">
+        <li v-for="album in albums" :key="album.folder_name" class="work__list-album">
           <image-album
-            :title="album.folder_name"
+            :url="album.url"
+            :title="album.title"
             :image="mainImage(album)"></image-album>
         </li>
       </ul>
@@ -15,6 +16,7 @@
 
 <script>
 import ImageAlbum from '~/components/ImageAlbum'
+import { mapState } from 'vuex'
 
 export default {
   components: {
@@ -22,8 +24,10 @@ export default {
   },
   props: {
     heading: String,
-    gallery: Array,
-    folders: Array
+    gallery: Array
+  },
+  computed: {
+    ...mapState(['albums'])
   },
   methods: {
     mainImage (album) {
@@ -50,7 +54,7 @@ export default {
     
     &__list-album {
       width: calc(50% - #{$grid-spacing * 2});
-      margin: 0 $grid-spacing $grid-spacing; 
+      margin: $grid-spacing $grid-spacing 0; 
     } 
   }
 
