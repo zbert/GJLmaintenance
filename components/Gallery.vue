@@ -2,14 +2,21 @@
   <div class="gallery section">
     <div class="container container--clearfix">
       <div class="gallery__heading">
-        <nuxt-link class="gallery__back-link" aria-label="Go back to the Homepage" to="/">
+        <a 
+          class="gallery__back-link"
+          aria-label="Go back to the Homepage"
+          @click.stop.prevent="goBack"
+          href="/">
           <svg stroke="inherit" class="gallery__back-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20"><path stroke="inherit" d="M13.891 17.418c0.268 0.272 0.268 0.709 0 0.979s-0.701 0.271-0.969 0l-7.83-7.908c-0.268-0.27-0.268-0.707 0-0.979l7.83-7.908c0.268-0.27 0.701-0.27 0.969 0s0.268 0.709 0 0.979l-7.141 7.419 7.141 7.418z"></path></svg>
-        </nuxt-link>
+        </a>
         <h1 class="gallery__title type__h1">{{title}}</h1>
       </div>
       <ul class="gallery__list">
         <li v-for="(imageUrl, index) in gallery" :key="imageUrl" class="gallery__cell">
-          <button aria-label="Zoom into Image" class="gallery__button-expand">
+          <button 
+            aria-label="Zoom into Image"
+            @click="zoomIntoImage(imageUrl)"
+            class="gallery__button-expand">
             <img :alt="title + '-item-' + index" class="gallery__image" :src="imageUrl">
           </button>
         </li>
@@ -19,10 +26,21 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   props: {
     gallery: Array,
     title: String
+  },
+  methods: {
+    ...mapMutations(['setZoomedImage']),
+    zoomIntoImage ( imgUrl) {
+      this.setZoomedImage(imgUrl);
+    },
+    goBack() {
+      this.$router.back()
+    }
   }
 }
 </script>

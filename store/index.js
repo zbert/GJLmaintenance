@@ -23,5 +23,12 @@ const folders = Array.isArray(albums.folders)
   : {}
 
 export const state = () => ({
-  albums: folders
+  albums: folders,
+  zoomedImage: ''
 })
+
+export const mutations = {
+  setZoomedImage(state, url) {
+    state.zoomedImage = url
+  }
+}
