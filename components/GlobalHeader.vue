@@ -20,7 +20,7 @@
       <div class="global-header__brand">
         <h1 class="global-header__heading">
           <span class="util__sr-only">{{siteTitle}}</span>
-          <img class="global-header__brand-image" alt="GJL Construction & Maintenance" src="~/assets/images/logo.svg">
+          <img class="global-header__brand-image" alt="GJL Construction & Maintenance" src="~/assets/images/gjl-logo.svg">
         </h1>
       </div>
       <nav class="global-header__navbar" :class="[navbarStateClass]">
