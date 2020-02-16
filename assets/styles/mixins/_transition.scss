@@ -18,6 +18,7 @@
 ///     transition: width 0.2s cubic-bezier(0.19, 1, 0.22, 1), height 0.3s ease-in-out;
 ///   }
 
+
 @mixin transition($transitions...) {
   $unfoldedTransitions: ();
   @each $transition in $transitions {

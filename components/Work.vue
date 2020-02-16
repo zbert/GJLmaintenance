@@ -2,21 +2,37 @@
   <div id="our-work" class="work section section--cream">
     <div class="container">
       <h2 class="work__title type__h2">{{heading}}</h2>
-      <image-grid :images="gallery"></image-grid>
+      <ul class="work__list">
+        <li v-for="album in albums" :key="album.folder_name" class="work__list-album">
+          <image-album
+            :url="album.url"
+            :title="album.title"
+            :image="mainImage(album)"></image-album>
+        </li>
+      </ul>
     </div>    
   </div>
 </template>
 
 <script>
-import ImageGrid from '~/components/ImageGrid'
+import ImageAlbum from '~/components/ImageAlbum'
+import { mapState } from 'vuex'
 
 export default {
   components: {
-    ImageGrid
+    ImageAlbum
   },
   props: {
     heading: String,
     gallery: Array
+  },
+  computed: {
+    ...mapState(['albums'])
+  },
+  methods: {
+    mainImage (album) {
+      return album.gallery && album.gallery[0]
+    }
   }
 }
 </script>
@@ -28,11 +44,40 @@ export default {
   }
 
   @include screen-above('mobile-wide') {
-   
+    $grid-spacing: $globals__container-padding / 2;
+
+    &__list {
+      display: flex;
+      margin-left: $grid-spacing * -1;
+      margin-right: $grid-spacing * -1;
+    }
+    
+    &__list-album {
+      width: calc(50% - #{$grid-spacing * 2});
+      margin: $grid-spacing $grid-spacing 0; 
+    } 
   }
 
   @include screen-above('tablet') {
-   
+    $grid-spacing: $globals__container-padding--tablet / 2;
+
+    &__list {
+      display: flex;
+      margin-left: $grid-spacing * -1;
+      margin-right: $grid-spacing * -1;
+    }
+    
+    &__list-album {
+      width: calc(50% - #{$grid-spacing * 2});
+      margin: 0 $grid-spacing $grid-spacing; 
+    } 
+  }
+
+  @include screen-above('desktop') {
+    $grid-spacing: $globals__container-padding--tablet / 2;
+    &__list-album {
+      width: calc(33.33334% - #{$grid-spacing * 2});
+    } 
   }
 }
 </style>

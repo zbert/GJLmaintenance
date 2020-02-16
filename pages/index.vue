@@ -4,7 +4,6 @@
     <services v-bind="servicesContent" />
     <why-hire v-bind="hireUsContent" />
     <work v-bind="workContent" />
-    <contact v-bind="contactContent"></contact>
   </div>
 </template>
 
@@ -13,7 +12,7 @@ import Welcome from '~/components/Welcome.vue'
 import Services from '~/components/Services.vue'
 import WhyHire from '~/components/WhyHire.vue'
 import Work from '~/components/Work.vue'
-import Contact from '~/components/Contact.vue'
+
 
 import WhyHireMarkdown from '~/static/content/hireus/_index.md'
 import ServicesMarkdown from '~/static/content/services/_index.md'
@@ -26,8 +25,7 @@ export default {
     Welcome,
     Services,
     WhyHire,
-    Work,
-    Contact
+    Work
   },
   computed: {
     hireUsContent: () => ({
@@ -44,11 +42,6 @@ export default {
       title: WelcomeMarkdown.attributes.heading,
       copy: WelcomeMarkdown.html,
       imageGrid: WelcomeMarkdown.attributes.collage
-    }),
-    contactContent: () => ({
-      title: ContactMarkdown.attributes.heading,
-      lead: ContactMarkdown.html,
-      address: ContactMarkdown.attributes.address_details
     })
   },
   data: () =>({

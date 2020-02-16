@@ -249,10 +249,14 @@ export default {
     }
 
     &__navbar-link {
-
+      @include transition('color');
       font-size: $font-nav-size;
       margin-left: $spacing__unit;
       margin-right: 2em;
+
+      &:hover {
+        color: $colors__blue;
+      }
     }
 
     &__heading {
