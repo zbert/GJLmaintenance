@@ -44,9 +44,10 @@
   ],
   "folders": [
     {
-      "folder_name": "Tuckpointing and Masonry",
+      "folder_name": "Boiler Replacement",
       "gallery": [
-        "/uploads/20191005_103936.jpg"
+        "/uploads/20191114_234251.jpg",
+        "/uploads/20191223_145525.jpg"
       ]
     },
     {
@@ -63,6 +64,12 @@
         "/uploads/roof.jpg"
       ],
       "folder_name": "Roofing Projects"
+    },
+    {
+      "folder_name": "Tuckpointing and Masonry",
+      "gallery": [
+        "/uploads/20191005_103936.jpg"
+      ]
     }
   ]
 }
