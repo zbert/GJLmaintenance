@@ -44,6 +44,14 @@
   ],
   "folders": [
     {
+      "folder_name": "Kitchen Remodeling",
+      "gallery": [
+        "/uploads/grid-img-1.jpg",
+        "/uploads/grid-img-2.jpg",
+        "/uploads/grid-img-3.jpg"
+      ]
+    },
+    {
       "gallery": [
         "/uploads/roof-repair.jpg",
         "/uploads/roof.jpg"
