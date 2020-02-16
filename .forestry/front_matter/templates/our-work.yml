@@ -13,13 +13,5 @@ fields:
   template: image-gallery
   label: Fotos
   description: Crea un Folder de Fotos
-- name: gallery
-  type: blocks
-  template_types:
-  - image-grid-block
-  config:
-    min: 
-    max: '20'
-  label: Gallery
 pages:
 - static/content/work.json
