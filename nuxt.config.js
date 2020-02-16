@@ -1,4 +1,5 @@
 import MarkdownIt from 'markdown-it'
+const generateRoutes = require('./generateListOfRoutes')
 
 const path = require('path')
 const md = MarkdownIt({
@@ -47,6 +48,9 @@ export default {
     { src: '~/plugins/svg4everybody.js', mode: 'client' },
     { src: '~/plugins/utils/backgroundStyle.js' }
   ],
+  generate: {
+    routes: generateRoutes
+  },
   /*
   ** Nuxt.js dev-modules
   */
