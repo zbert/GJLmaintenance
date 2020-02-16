@@ -7,6 +7,12 @@ fields:
   config:
     required: false
   label: Heading
+- name: fotos
+  type: include
+  config: {}
+  template: image-gallery
+  label: Fotos
+  description: Crea un Folder de Fotos
 - name: gallery
   type: blocks
   template_types:
@@ -15,11 +21,5 @@ fields:
     min: 
     max: '20'
   label: Gallery
-- name: fotos
-  type: include
-  config: {}
-  template: image-gallery
-  label: Fotos
-  description: Crea un Folder de Fotos
 pages:
 - static/content/work.json
